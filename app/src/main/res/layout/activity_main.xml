@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:id="@+id/ivLogo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instantly_validate_your_iban_number"
+        android:textSize="18sp"
+        android:fontFamily="@font/figtree_bold"
+        android:layout_margin="10dp"
+        android:id="@+id/tvIBANHeading"
+        android:layout_marginHorizontal="14dp"
+        android:visibility="visible"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilIBAN"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:theme="@style/EditTextThemeOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/iban_number"
+        android:layout_marginHorizontal="10dp"
+        android:textColorHint="@color/black"
+        app:helperTextTextAppearance="@style/HelperTextAppearance"
+        app:boxStrokeColor="@color/black"
+        app:helperTextTextColor="@color/themeColor"
+        app:errorTextAppearance="@style/ErrorTextAppearance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvIBANHeading">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColorHighlight="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/llValidateButton"
+        app:layout_constraintTop_toBottomOf="@id/tilIBAN">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/validate_iban_number"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            android:id="@+id/btnValidate"/>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:id="@+id/progressBar"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/curreny_convertion"
+        android:textSize="18sp"
+        android:fontFamily="@font/figtree_bold"
+        android:id="@+id/tvConvertionHeading"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="15dp"
+        android:visibility="visible"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llValidateButton"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFrom"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:theme="@style/EditTextThemeOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/from_currency"
+        android:layout_marginHorizontal="10dp"
+        android:textColorHint="@color/black"
+        app:helperTextTextAppearance="@style/HelperTextAppearance"
+        app:boxStrokeColor="@color/black"
+        app:errorTextAppearance="@style/ErrorTextAppearance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvConvertionHeading">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFromCurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:focusable="false"
+            android:textColorHighlight="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTO"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:theme="@style/EditTextThemeOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/to_currency"
+        android:layout_marginHorizontal="10dp"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:errorTextAppearance="@style/ErrorTextAppearance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilFrom">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etToCurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:focusable="false"
+            android:textColorHighlight="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAmount"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:theme="@style/EditTextThemeOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/amount"
+        android:layout_marginHorizontal="10dp"
+        android:textColorHint="@color/black"
+        app:helperTextTextAppearance="@style/HelperTextAppearance"
+        app:boxStrokeColor="@color/black"
+        app:errorTextAppearance="@style/ErrorTextAppearance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilTO">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:inputType="numberDecimal"
+            android:textColorHighlight="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_currency"
+        android:textSize="18sp"
+        android:fontFamily="@font/figtree_bold"
+        android:layout_margin="10dp"
+        android:id="@+id/tvResult"
+        android:layout_marginHorizontal="14dp"
+        android:visibility="gone"
+        android:textColor="@color/themeColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilAmount"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvResult">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/convert"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            android:id="@+id/btnConvert"/>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:id="@+id/convertProgressBar"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

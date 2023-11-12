@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/figtree_bold"
+        android:text="@string/select_currency"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+       />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:background="@drawable/search_et_bg"
+        android:fontFamily="@font/figtree_regular"
+        android:hint="@string/search_currency"
+        android:imeOptions="actionSearch"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+      />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCurrencies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginVertical="10dp"
+        tools:listitem="@layout/currencies_rv_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+       />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

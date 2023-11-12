@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config>
+        <domain includeSubdomains="true">api.apilayer.com</domain>
+        <pin-set>
+            <pin digest="SHA-256">EvfpJzX0VE2PY4oWclB2/GWV8fr6KZJJf0as+pGo2gE=</pin>
+            <pin digest="SHA-256">hS5jJ4P+iQUErBkvoWBQOd1T7VOAYlOVegvv1iMzpxA=</pin>
+            <pin digest="SHA-256">Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>
